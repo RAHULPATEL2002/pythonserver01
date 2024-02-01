@@ -1,0 +1,50 @@
+Open Command Prompt:
+
+    Press Win + R, type cmd, and press Enter to open the Command Prompt.
+
+Navigate to the desired directory:
+
+    Use the cd command to navigate to the directory where you want to create your server files.
+
+    bash
+
+    cd path\to\your\directory
+
+Create a Python file:
+
+    Create a new Python file (e.g., server.py) using a text editor like Notepad or a code editor like Visual Studio Code.
+
+    notepad server.py
+
+Edit server.py:
+
+    Open the server.py file and add the following code to create a basic HTTP server.
+
+    python
+
+    import http.server
+    import socketserver
+
+    # Set the port number
+    PORT = 8000
+
+    # Create a simple handler to serve files
+    Handler = http.server.SimpleHTTPRequestHandler
+
+    # Create the server
+    with socketserver.TCPServer(("", PORT), Handler) as httpd:
+        print("Server started at port", PORT)
+        # Start the server
+        httpd.serve_forever()
+
+Save and close the file.
+
+Run the server:
+
+    Go back to the Command Prompt, and execute the following command to run your server:
+
+    python server.py
+
+Access the server:
+
+    Open your web browser and go to http://localhost:8000. You should see a directory listing of the files in the directory where your server.py file is located.
